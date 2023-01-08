@@ -1,29 +1,40 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LoginOrSignUp from "./components/LoginOrSignUp/LoginOrSignUp";
+import Main from "./components/Main/Main";
+import { useUserContext } from "./Context/UserContextProvider";
+import io from 'socket.io-client';
 
+const socket = io('localhost:8081');
 
 function App() {
 
+  const { isLoggedIn } : any = useUserContext();
+
   useEffect(() => {
-    fetch("http://localhost:8081/users" , { method: 'get', 
-    headers: new Headers({
-     "Access-Control-Allow-Origin": "*"
-    })})
-      .then(res => res.json())
-      .then(
-        (result) => {
-         console.log(result)
-        },
-        
-        (error) => {
-        console.log(error)
-        }
-      )
-  }, [])
+  
+  }, [ isLoggedIn ])
+  const emitInSocket = () => {
+  
+    //Client sends a message at the moment it got connected with the server
+      socket.emit('clientToServer', "Hello, server!");
+      socket.emit('realTime' , 'some number')
+    }
+
+  useEffect(() => {
+    emitInSocket();
+    socket.on('serverToClient', (data) => {
+    console.log(data)
+   })
+  } , [])
+
+
+
+
+
 
   return (
    <>
-   <LoginOrSignUp/>
+   { localStorage.getItem('session') ? <Main/>  : <LoginOrSignUp/> }
    </>
   );
 

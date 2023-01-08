@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserDataService from "../../api/services/user.service";
 
 const CreateAccount = (): any => {
@@ -16,16 +16,14 @@ const CreateAccount = (): any => {
 
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
-    setUser({ ...user, [name]: value });
+    setUser(( state ) => state = { ...user, [name]: value });
   };
 
   const handleSubmit = async (e: any) => {
-    const data = {
-      name: user.name,
-      email: user.email,
-      mobile: user.mobile,
-      password: user.password,
-    };
+    e.preventDefault();
+    
+    const data = user ;
+    console.log(user)
    
       UserDataService.create(data)
       .then((response: any) => {
@@ -35,7 +33,7 @@ const CreateAccount = (): any => {
           mobile: response.data.mobile,
           password: response.data.password,
         })
-        navigate("/")
+        navigate("/Login")
         console.log(response.data)
       })
       .catch((e: any) => {
@@ -45,14 +43,15 @@ const CreateAccount = (): any => {
 
   return (
     <div className="flex flex-col text-[#8e8e8e] text-center  text-[2rem] font-[monospace]">
-      <p className="text-[2.5rem] py-5 text-[#dfdfdf] boxshadow2">
+      <div className="flex flex-row justify-between boxshadow2"><Link to='/'><p className="py-5 pl-5 hover:text-white transition-all duration-200">{"<< back"}</p></Link> <p className="text-[2rem] py-5 pr-5 text-[#dfdfdf] ">
         Create Account
-      </p>
+      </p></div>
       <form onSubmit={handleSubmit}>
-      <div className="FORM_CONTAINER mt-[5rem] mx-auto">
+      <div className="FORM_CONTAINER mt-[3rem] w-5/12 mx-auto">
         <div className="flex flex-row my-5">
-          <p className="w-5/12  textshadow2 pt-2">Name : </p>
+          <p className="w-5/12  textshadow2 pt-2">User Name : </p>
           <input
+            name="name"
             placeholder="Name"
             className="ml-5 text-white rounded-[5px] boxshadow2 h-[4rem]  outline-none pl-5  bg-[#3c3940]"
             onChange={handleInputChange}
@@ -70,10 +69,10 @@ const CreateAccount = (): any => {
           ></input>
         </div>
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2">Email : </p>
+          <p className="w-5/12 textshadow2 pt-2">Mobile : </p>
           <input
-            name="phoneNumber"
-            placeholder="phone number"
+            name="mobile"
+            placeholder="Phone Number"
             className="ml-5 text-white rounded-[5px] boxshadow2 h-[4rem]  outline-none pl-5  bg-[#3c3940]"
             onChange={handleInputChange}
             required
@@ -91,8 +90,8 @@ const CreateAccount = (): any => {
          ></input>
         </div>
         <button
-          className="mx-auto bg-gradient-to-r from-[#30a362] to-[green] px-5 text-[white] border-none rounded-[15px] p-2 boxshadow2 mt-[5rem] hover:scale-110 duration-200 transition-all"
-        onClick={handleSubmit}
+          className="mx-auto bg-gradient-to-r from-[#30a362] to-[green] px-5 text-[white] border-none rounded-[15px] p-2 boxshadow2 mt-[2rem] hover:scale-110 duration-200 transition-all"
+          onClick={handleSubmit}
         >
           Create Account
         </button>
