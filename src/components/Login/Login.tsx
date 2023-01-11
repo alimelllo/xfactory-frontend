@@ -31,7 +31,7 @@ const Login = (): any => {
         console.log(response.data)
         if(response.data.success){
           localStorage.setItem('session' , response.data.token );
-          localStorage.setItem('data' , response.data.user );
+          localStorage.setItem('userName' , response.data.user.name );
           navigate("/")
         }
       })

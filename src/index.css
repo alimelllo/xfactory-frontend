@@ -10,6 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(24, 24, 33);
+  height: 100%;
+  overflow: hidden;
 }
 
 code {
@@ -27,8 +29,4 @@ code {
 }
 .boxshadow3{
   box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
-}
-.Header {
-  position:relative;
-  z-index:999;
 }
