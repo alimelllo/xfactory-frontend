@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Login from './components/Login/Login';
 import UserContextProvider from './Context/UserContextProvider';
+import Game from './components/Main/Game';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,6 +19,7 @@ root.render(
      <Route path="/" element={<App />}/>
      <Route path="/CreateAccount" element={<CreateAccount/>}/>
      <Route path="/Login" element={<Login/>}/>
+     <Route path="/Game" element={<Game/>}/>
    </Routes>
   </BrowserRouter>
   </UserContextProvider>

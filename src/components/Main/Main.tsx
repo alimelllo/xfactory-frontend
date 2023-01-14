@@ -2,8 +2,8 @@ import { useUserContext } from "../../Context/UserContextProvider";
 import mainIntro from '../../images/mainIntro.png';
 import { slide as Menu} from 'react-burger-menu'
 import burgerMenu from '../../images/burgerMenu.png';
-import io from 'socket.io-client';
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 
 const Main = () : any => {
@@ -55,26 +55,7 @@ const Main = () : any => {
         background:' rgba(0, 0, 0, 0.3)'
       }
    }
-   const socket = io('localhost:8081');
-
-   const emitInSocket = () => {
-  
-    //Client sends a message at the moment it got connected with the server
-       socket.emit('newPlayer', "ali is here!");
-     
-    }
-  
-  useEffect(() => {
-    emitInSocket();
-    socket.on('serverToClient', (data) => {
-    console.log(data)
-   })
-  } , [])
-
-
-
-
-
+   
 
 return (
  <div className="w-full h-screen flex" style={{ backgroundImage : `url(${mainIntro})` , backgroundSize :'cover'  , backgroundPosition : 'center'}}>
@@ -90,9 +71,9 @@ return (
         <p className="mr-10">{localStorage.getItem("userName")}</p> 
     </div>
 
-    <div className="flex flex-col mt-[22rem]">
-       <div className="w-full py-3 text-[2.5rem] text-[#a4a4a4] rounded-[5px]"><p className="float-right mr-[6rem]">Play To Earn...</p></div>
-        <div className="flex justify-end"><p className="pb-3 text-[1.5rem] text-center text-white rounded-[5px] mr-[6rem] boxshadow2 w-[15rem] bg-gradient-to-r from-[#2a6744] to-[green] cursor-pointer transition-all duration-200 hover:scale-110 tracking-[1px] hover:bg-[#0c9f0c] pt-2 mt-[2rem]">Start Playing</p></div>
+    <div className="flex flex-col mt-[22rem] ">
+       <div className="w-full py-3 text-[2.5rem] font-[600] text-[#a4a4a4] md:text-[#3d3d3d] rounded-[5px] md:text-center"><p className="float-right md:float-none mr-[6rem] md:mr-0 md:text-center">Play To Earn...</p></div>
+        <div className="flex justify-end md:justify-center"><Link to="/Game"><p className="pb-3 text-[1.5rem] text-center text-white rounded-[5px] mr-[6rem] md:mr-0  boxshadow2 w-[15rem] bg-gradient-to-r from-[#2a6744] to-[green] cursor-pointer transition-all duration-200 hover:scale-110 tracking-[1px] hover:bg-[#0c9f0c] pt-2 mt-[2rem] ">Start Playing</p></Link></div>
         </div>
     </div> 
   </div> 
