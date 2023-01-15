@@ -63,6 +63,7 @@ return (
     <Menu styles={styles} customBurgerIcon={ <img className="w-1/12" src={burgerMenu} /> }>
         <div className="flex flex-col w-full">
           <p className="menu-item font-bold text-[2rem] mt-5 pb-2 border-b-[2px] border-b-solid border-b-[#454545] w-full">Game  </p>
+          <p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200">Connect Wallet</p> 
           <p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200">Settings</p> 
           <p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200" onClick={() => { localStorage.removeItem('session'); isLoggedInHandler(!isLoggedIn)}}>Log out </p> 
         </div>
@@ -71,10 +72,10 @@ return (
         <p className="mr-10">{localStorage.getItem("userName")}</p> 
     </div>
 
-    <div className="flex flex-col mt-[22rem] ">
-       <div className="w-full py-3 text-[2.5rem] font-[600] text-[#a4a4a4] md:text-[#3d3d3d] rounded-[5px] md:text-center"><p className="float-right md:float-none mr-[6rem] md:mr-0 md:text-center">Play To Earn...</p></div>
+      <div className="flex flex-col h-[75%] justify-end">
+        <div className="w-full py-3 text-[2.5rem] font-[600] text-[#a4a4a4] md:text-[#3d3d3d] rounded-[5px] md:text-center"><p className="float-right md:float-none mr-[6rem] md:mr-0 md:text-center">Play To Earn...</p></div>
         <div className="flex justify-end md:justify-center"><Link to="/Game"><p className="pb-3 text-[1.5rem] text-center text-white rounded-[5px] mr-[6rem] md:mr-0  boxshadow2 w-[15rem] bg-gradient-to-r from-[#2a6744] to-[green] cursor-pointer transition-all duration-200 hover:scale-110 tracking-[1px] hover:bg-[#0c9f0c] pt-2 mt-[2rem] ">Start Playing</p></Link></div>
-        </div>
+      </div>
     </div> 
   </div> 
  )
