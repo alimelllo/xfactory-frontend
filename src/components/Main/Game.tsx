@@ -54,7 +54,7 @@ socket.off('loadingToStart').on('loadingToStart', async ( data : any ) => {
    <div className=" flex flex-row w-7/12 z-20 h-[23rem]  bg-[#030303dc] justify-center  boxshadow3 rounded-[10px]">
     { !expired && !loadingCountDown && <>
        <div className={`w-[35%]  flex flex-col justify-center`}>
-        <img src={ rocketGoing } />
+        <img className="opacity-[0.8]" src={ rocketGoing } />
        </div>
     <div className="text-[#e9e9e9] flex flex-col justify-center text-center rounded-[15px] text-[3.5rem] w-4/12 font-[600] ">{`${ gameValue !== 'Expired' ? gameValue + ' ' + 'X' : 'Ready'}`}</div></>}
     { expired &&
