@@ -47,30 +47,30 @@ const Login = (): any => {
       </p></div>
      
       <form onSubmit={handleSubmit}>
-      <div className="FORM_CONTAINER mt-[5rem] w-5/12 mx-auto">
+      <div className="FORM_CONTAINER mt-[5rem] w-5/12 md:w-11/12  md:text-[1rem] mx-auto">
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2">Email : </p>
+          <p className="w-5/12  textshadow2 pt-2 md:pt-4 md:w-3/12">Email : </p>
           <input
             name="email"
             placeholder="Email"
-            className="ml-5 text-white rounded-[5px] boxshadow2 h-[4rem]  outline-none pl-5  bg-[#3c3940]"
+            className="ml-5 md:w-8/12 text-white rounded-[5px] boxshadow2 h-[4rem]  outline-none pl-5  bg-[#3c3940]"
             onChange={handleInputChange}
             required
           ></input>
         </div>
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2">Password : </p>
+          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-3/12">Password : </p>
           <input
             name="password"
             placeholder="Password"
             type="password"
-            className="ml-5 text-white rounded-[5px] boxshadow2 h-[4rem]  outline-none pl-5  bg-[#3c3940]"
+            className="ml-5 md:w-8/12 text-white rounded-[5px] boxshadow2 h-[4rem]  outline-none pl-5  bg-[#3c3940]"
             onChange={handleInputChange}
             required>
           </input>
         </div>
         <button
-          className="mx-auto bg-gradient-to-r from-[#2c82b8] to-[#0d5f8b] px-10 text-[white] border-none rounded-[15px] p-2 boxshadow2 mt-[5rem] hover:scale-110 duration-200 transition-all"
+          className="mx-auto md:w-8/12 bg-gradient-to-r from-[#2c82b8] to-[#0d5f8b] px-10 text-[white] border-none rounded-[15px] p-2 md:p-4 boxshadow2 mt-[5rem] hover:scale-110 duration-200 transition-all"
           onClick={handleSubmit}>
           Login
         </button>
