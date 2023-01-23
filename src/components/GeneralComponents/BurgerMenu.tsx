@@ -61,7 +61,7 @@ const BurgerMenu = () : any => {
           <Link to='/'><p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200">Home</p> </Link>
           <p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200">Connect Wallet</p> 
           <p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200">Settings</p> 
-          <p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200" onClick={() => { localStorage.removeItem('session'); isLoggedInHandler(!isLoggedIn)}}>Log out </p> 
+          <Link to='/'><p className="menu-item text-[1.5rem] py-2 pl-3 hover:scale-110 cursor-pointer transition-all duration-200" onClick={() => { localStorage.removeItem('session'); isLoggedInHandler(!isLoggedIn)}}>Log out </p></Link>
         </div>
     </Menu>
     )
