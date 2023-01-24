@@ -1,18 +1,16 @@
 import mainIntro from '../../images/mainIntro.png';
 import { Link } from "react-router-dom";
 import Header from '../GeneralComponents/Header';
+import Stars from '../GeneralComponents/StarsBackground/Stars';
 
 
 
 const Main = () : any => {
 
-
-   
-
 return (
  <div className="w-full h-screen flex" style={{ backgroundImage : `url(${mainIntro})` , backgroundSize :'cover'  , backgroundPosition : 'center'}}>
   <div className="w-full">
-   
+   <Stars />
     <Header/>
 
       <div className="flex flex-col h-[75%] justify-end">
