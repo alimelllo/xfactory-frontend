@@ -15,7 +15,7 @@ return (
 
     <div className="w-4/12 md:w-10/12 mx-auto flex flex-row md:flex-col justify-around mt-[3rem]">
     <Link to='/Login'> <button className="md:w-full bg-gradient-to-r from-[#2c82b8] to-[#0d5f8b]  boxshadow2 hover:bg-[#5186da] text-white text-[2rem] px-10 pb-1 rounded-[10px] hover:scale-110 duration-200 transition-all">Log in</button></Link>
-    <Link to='/CreateAccount'> <button className="md:w-full md: mt-5 bg-[#e07d27] boxshadow2 hover:bg-[#ef7a4f] text-white text-[2rem] px-5 pb-1 rounded-[10px] hover:scale-110 duration-200 transition-all">Create Account</button></Link>
+    <Link to='/CreateAccount'> <button className="md:w-full md:mt-5 bg-[#e07d27] boxshadow2 hover:bg-[#ef7a4f] text-white text-[2rem] px-5 pb-1 rounded-[10px] hover:scale-110 duration-200 transition-all">Create Account</button></Link>
     </div>
 </div>
 )
