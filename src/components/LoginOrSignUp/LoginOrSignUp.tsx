@@ -9,7 +9,7 @@ return (
 <div className='flex flex-col justify-center'>
     <div className='font-[cursive] boxshadow2 pb-3 text-[#d3d3d3] pl-5 text-[2rem] mt-3 h-[4rem]'>X Factrory</div>
 
-    <div style={{ backgroundImage : `url(${main})`, backgroundSize :'cover' , backgroundPosition : 'center' }} className='h-[25rem] md:h-[20rem] rounded-[10px] flex mx-auto w-6/12 md:w-11/12 mt-[3rem] boxshadow2 opacity-[0.5] hover:opacity-[0.8] hover:scale-110 duration-200 transition-all cursor-pointer'>
+    <div style={{ backgroundImage : `url(${main})`, backgroundSize :'cover' , backgroundPosition : 'center' }} className='h-[25rem] md:h-[20rem] rounded-[10px] flex mx-auto w-6/12 md:w-11/12 mt-[3rem] boxshadow2 opacity-[0.8] '>
         <p className='bg-[#5b5b5bbf] m-auto py-4 px-[3rem] text-center w-6/12 text-white rounded-[15px] text-[1.5rem]'>Coming Soon</p>
     </div> 
 

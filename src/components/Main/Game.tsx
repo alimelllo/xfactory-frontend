@@ -24,11 +24,11 @@ useEffect(() => {
         if(data === 'Expired'){
           SetGameValue('Expired');
           SetExpired(true)
-          setTimeout(() =>{
-           SetExpired(false);
+          setTimeout(() => {
+          SetExpired(false);
           } , 3000 )
         }
-    //  console.log(data);
+        
 })
 
 socket.off('loadingToStart').on('loadingToStart', async ( data : any ) => {
@@ -68,7 +68,7 @@ socket.off('loadingToStart').on('loadingToStart', async ( data : any ) => {
 
   <div className="GAME_VALUE_CONTAINER w-[50%] md:w-full flex flex-row mt-[5rem] justify-center md:justify-center md:mt-[1rem]">
    <Stars />
-   <div className=" flex flex-row md:flex-col w-10/12 z-20 h-[23rem] md:h-[15rem] md:w-11/12 bg-[#030303dc] justify-center md:p-5 boxshadow3 rounded-[10px]">
+   <div className=" flex flex-row md:flex-col w-10/12 z-20 h-[23rem] md:h-[15rem] md:w-11/12 bg-[#0f0f0fdc] justify-center md:p-5 boxshadow3 rounded-[10px]">
     { !expired && !loadingCountDown && <>
        <div className={`w-[60%] md:w-[50%] md:mx-auto flex flex-col justify-center`}>
         <img className="opacity-[0.8]" src={ rocketGoing } />
