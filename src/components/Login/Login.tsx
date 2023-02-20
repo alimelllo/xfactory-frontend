@@ -47,7 +47,7 @@ const Login = (): any => {
       </p></div>
      
       <form onSubmit={handleSubmit}>
-      <div className="FORM_CONTAINER mt-[5rem] w-5/12 md:w-11/12  md:text-[1rem] mx-auto">
+      <div className="FORM_CONTAINER mt-[5rem] w-6/12 md:w-11/12  md:text-[1rem] mx-auto">
         <div className="flex flex-row my-5">
           <p className="w-5/12  textshadow2 pt-2 md:pt-4 md:w-3/12">Email : </p>
           <input
