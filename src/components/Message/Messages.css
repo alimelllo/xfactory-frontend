@@ -14,7 +14,7 @@
 }
 
 .messageBody::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
 }
 
 .messageBody::-webkit-scrollbar-track {
