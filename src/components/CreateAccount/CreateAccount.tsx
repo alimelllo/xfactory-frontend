@@ -49,7 +49,7 @@ const CreateAccount = (): any => {
       <form onSubmit={handleSubmit}>
       <div className="FORM_CONTAINER mt-[3rem] md:text-[1rem] w-6/12 md:w-11/12 mx-auto">
         <div className="flex flex-row my-5">
-          <p className="w-5/12  textshadow2 pt-2 md:pt-4 md:w-3/12">UserName : </p>
+          <p className="w-5/12  textshadow2 pt-2 md:pt-4 md:w-4/12">UserName : </p>
           <input
             name="name"
             placeholder="Name"
@@ -59,7 +59,7 @@ const CreateAccount = (): any => {
          ></input>
         </div>
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-3/12">Email : </p>
+          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-4/12">Email : </p>
           <input
             name="email"
             placeholder="Email"
@@ -69,7 +69,7 @@ const CreateAccount = (): any => {
           ></input>
         </div>
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-3/12">Mobile : </p>
+          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-4/12">Mobile : </p>
           <input
             name="mobile"
             placeholder="Phone Number"
@@ -79,7 +79,7 @@ const CreateAccount = (): any => {
           ></input>
         </div>
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-3/12">Password : </p>
+          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-4/12">Password : </p>
           <input
             name="password"
             placeholder="Password"

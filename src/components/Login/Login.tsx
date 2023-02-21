@@ -49,7 +49,7 @@ const Login = (): any => {
       <form onSubmit={handleSubmit}>
       <div className="FORM_CONTAINER mt-[5rem] w-6/12 md:w-11/12  md:text-[1rem] mx-auto">
         <div className="flex flex-row my-5">
-          <p className="w-5/12  textshadow2 pt-2 md:pt-4 md:w-3/12">Email : </p>
+          <p className="w-5/12  textshadow2 pt-2 md:pt-4 md:w-3/12">Email</p>
           <input
             name="email"
             placeholder="Email"
@@ -59,7 +59,7 @@ const Login = (): any => {
           ></input>
         </div>
         <div className="flex flex-row my-5">
-          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-3/12">Password : </p>
+          <p className="w-5/12 textshadow2 pt-2 md:pt-4 md:w-3/12">Password</p>
           <input
             name="password"
             placeholder="Password"

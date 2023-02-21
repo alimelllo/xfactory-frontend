@@ -1,8 +1,6 @@
 .messageBody {
-    background-color: #05050c;
-    background-image: 
-        radial-gradient(at 47% 33%, rgb(26, 26, 26) 0, transparent 59%), 
-        radial-gradient(at 82% 65%, rgb(23, 23, 23) 0, transparent 55%);
+    background-color: #0f0f0f;
+    
     overflow-y: scroll;
     overflow-x: hidden;
 }
