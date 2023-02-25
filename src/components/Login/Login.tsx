@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UserDataService from "../../api/services/user.service";
-import { useUserContext } from "../../Context/UserContextProvider";
+import ReactLoading from "react-loading";
 
 const Login = (): any => {
 
-  const { isLoggedInHandler } : any = useUserContext();
+  const [ isLoading , SetIsLoading ] = useState<boolean>(false)
   
   let navigate = useNavigate();
 
@@ -23,13 +23,15 @@ const Login = (): any => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    
+    SetIsLoading(true)
     const data = user ;
   
       UserDataService.login(data)
       .then((response: any) => {
         console.log(response.data)
         if(response.data.success){
+          SetIsLoading(false)
+
           localStorage.setItem('session' , response.data.token );
           localStorage.setItem('userName' , response.data.user.name );
           navigate("/")
@@ -37,6 +39,7 @@ const Login = (): any => {
       })
       .catch((e: any) => {
         console.log(e);
+        SetIsLoading(false);
       });
   };
 
@@ -45,7 +48,7 @@ const Login = (): any => {
      <div className="flex flex-row justify-between boxshadow2"><Link to='/'><p className="py-5 pl-5 hover:text-white transition-all duration-200">{"<< back"}</p></Link> <p className="text-[2rem] py-5 pr-5 text-[#a1a1a1] ">
         Login
       </p></div>
-     
+
       <form onSubmit={handleSubmit}>
       <div className="FORM_CONTAINER mt-[5rem] w-6/12 md:w-11/12  md:text-[1rem] mx-auto">
         <div className="flex flex-row my-5">
@@ -76,6 +79,9 @@ const Login = (): any => {
         </button>
       </div>
       </form>
+      
+      { isLoading &&  <ReactLoading type={"spinningBubbles"} color="white" className="m-auto mt-[3rem]" />}
+
     </div>
   );
 };
