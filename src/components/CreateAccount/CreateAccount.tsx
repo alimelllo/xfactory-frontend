@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UserDataService from "../../api/services/user.service";
+import ReactLoading from "react-loading";
+
 
 const CreateAccount = (): any => {
+
+
+  const [ isLoading , SetIsLoading ] = useState<boolean>(false)
+
   let navigate = useNavigate();
 
   const initialUserState = {
@@ -21,7 +27,7 @@ const CreateAccount = (): any => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    
+    SetIsLoading(true);
     const data = user ;
     console.log(user)
    
@@ -33,10 +39,12 @@ const CreateAccount = (): any => {
           mobile: response.data.mobile,
           password: response.data.password,
         })
+        SetIsLoading(false);
         navigate("/Login")
         console.log(response.data)
       })
       .catch((e: any) => {
+        SetIsLoading(false);
         console.log(e);
       });
   };
@@ -91,12 +99,14 @@ const CreateAccount = (): any => {
         </div>
         <button
           className="mx-auto md:w-8/12 md:p-4 bg-gradient-to-r from-[#30a362] to-[green] px-5 text-[white] border-none rounded-[15px] p-2 boxshadow2 mt-[2rem] hover:scale-110 duration-200 transition-all"
-          onClick={handleSubmit}
-        >
+          onClick={handleSubmit}>
           Create Account
         </button>
       </div>
       </form>
+
+      { isLoading &&  <ReactLoading type={"spinningBubbles"} color="white" className="m-auto mt-[3rem]" />}
+
     </div>
   );
 };
