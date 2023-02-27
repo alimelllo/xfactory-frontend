@@ -10,6 +10,7 @@ import Game from './components/Main/Game';
 import Message from './components/Message/Message';
 import GlobalMessage from './components/Message/GlobalMessages/GlobalMessage';
 import ChatRoom from './components/Message/ChatRoom/ChatRoom';
+import FriendsList from './components/Message/FriendsList/FriendsList';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,12 +23,12 @@ root.render(
      <Route path="/CreateAccount" element={<CreateAccount/>}/>
      <Route path="/Login" element={<Login/>}/>
      <Route path="/Game" element={<Game/>}/>
+    
      <Route path="/Messages" element={<Message/>}>
        <Route path="/Messages/Global" element={<GlobalMessage/>}/>
        <Route path="/Messages/Chat" element={<ChatRoom/>}/>
-
     </Route>
-     
+
    </Routes>
   </BrowserRouter>
   </UserContextProvider>

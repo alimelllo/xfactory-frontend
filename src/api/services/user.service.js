@@ -12,6 +12,12 @@ class UserDataService {
   login(data) {
     return http.post("/login", data);
   }
+  addFriend(data) {
+    return http.post("/addFriend", data);
+  }
+  currentUserInfo(data) {
+    return http.post("/currentUserInfo", data);
+  }
 }
 
 export default new UserDataService();
