@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import UserServices from '../../../api/services/user.service'
 import jwt_decode from "jwt-decode";
 import ReactLoading from "react-loading";
+import FriendItem from "./FriendItem";
 
 const FriendsList = () : any => {
 
@@ -19,7 +20,7 @@ const FriendsList = () : any => {
           
             const { friends } = resp.data;
             const list = friends.map(( item : any ) => (
-              <p className="w-11/12 cursor-pointer transition-all duration-200 hover:text-[white] hover:bg-[#171717] hover:scale-110 mx-auto pl-5 py-4 text-[#dadada] border-y-[1px] border-y-solid border-y-[#3f3f3f] boxshadow3">{item.name}</p>
+              <FriendItem name={item.name}/>
             ));
           
           SetFriendsList(list);
@@ -37,7 +38,7 @@ const FriendsList = () : any => {
  
  <div className="mt-5 z-30">
      { !isLoading && friendsList}
-     {  isLoading && <ReactLoading type={"spinningBubbles"} color="#9a9a9a" className="mx-auto mt-[5rem] w-6/12" />}
+     {  isLoading && <ReactLoading type={"bars"} color="#9a9a9a" className="mx-auto mt-[5rem] w-6/12" />}
  </div>
     
     )

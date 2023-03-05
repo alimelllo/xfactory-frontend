@@ -15,6 +15,9 @@ class UserDataService {
   addFriend(data) {
     return http.post("/addFriend", data);
   }
+  removeFriend(data) {
+    return http.post("/removeFriend", data);
+  }
   currentUserInfo(data) {
     return http.post("/currentUserInfo", data);
   }
