@@ -11,6 +11,7 @@ import Message from './components/Message/Message';
 import GlobalMessage from './components/Message/GlobalMessages/GlobalMessage';
 import ChatRoom from './components/Message/ChatRoom/ChatRoom';
 import FriendsList from './components/Message/FriendsList/FriendsList';
+import CardsGame from './components/Main/CardsGame/CardsGame';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,8 +23,9 @@ root.render(
      <Route path="/" element={<App />}/>
      <Route path="/CreateAccount" element={<CreateAccount/>}/>
      <Route path="/Login" element={<Login/>}/>
-     <Route path="/Game" element={<Game/>}/>
-    
+     <Route path="/RocketGame" element={<Game/>}/>
+     <Route path="/CardsGame" element={<CardsGame/>}/>
+
      <Route path="/Messages" element={<Message/>}>
        <Route path="/Messages/Global" element={<GlobalMessage/>}/>
        <Route path="/Messages/Chat" element={<ChatRoom/>}/>
