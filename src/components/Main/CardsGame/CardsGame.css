@@ -20,22 +20,25 @@
 
 .card__face {
   height: 10rem;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   position: absolute;
   color: white;
   text-align: center;
   font-weight: bold;
   backface-visibility: hidden;
-  padding-top: 60px;
+  padding: 20px;
+  padding-top: 40px;
 }
 
 .card__face--front {
-    background: linear-gradient(90deg, rgba(14, 75, 87, 0.992) 0%, rgba(21, 105, 174, 0.838) 100%);
-    box-shadow: 0 60px 50px rgba(0, 0, 0, 0.27);
+  
+    background: linear-gradient(145deg, rgba(14, 46, 87, 0.992) 0%, rgba(2, 113, 203, 0.838) 100%);
+    box-shadow:  20px 20px 26px #0d0d0d,
+    -20px -20px 26px #131313;    
 }
 
 .card__face--back {
-  background: linear-gradient(90deg, rgba(179, 22, 53, 0.992) 0%, rgba(171, 56, 24, 0.935)100%);
+  background: linear-gradient(145deg, rgba(135, 5, 70, 0.935) 0%, rgba(153, 18, 18, 0.992)100%);
   transform: rotateY(180deg);
 }
