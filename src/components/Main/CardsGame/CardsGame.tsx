@@ -29,7 +29,7 @@ useEffect(() => {
        { !canPlay && 
 <div className="h-screen flex flex-col justify-start overflow-hidden">
 <Flip left cascade>
-   <p className="text-center my-4 text-[#4c4c4c] text-[2rem] font-[600]">Pick Your Three Shots !</p>
+   <p className="text-center my-4 text-[#4c4c4c] text-[2rem] font-[600]">Pick Your Three Cards !</p>
 </Flip>
 
       <div className="h-[50%] flex flex-wrap justify-around boxshadow4 ">
