@@ -3,13 +3,14 @@ import './CardsGame.css';
 import cardBg from '../../../images/cardBg.png';
 import cardBgBack from '../../../images/cardBgBack.png';
 
-const Card = () => {
 
-    const [ flip , SetFlip ] = useState<boolean>(false);
+const Card = ( props : any) => {
 
+    const [ flip , SetFlip ] = useState(false);
 
     return (
-    <div className="scene scene--card">
+      
+    <div className={`scene scene--card ${props.animate}`}>
       <div onClick={() => SetFlip(!flip)} className={`card  ${ flip ? 'is-flipped' : null}`}>
          <div className="card__face card__face--front boxshadow3">
           <img className=" opacity-[0.7]" src={cardBg}></img>
@@ -19,6 +20,7 @@ const Card = () => {
          </div>
       </div>
     </div>
+   
     )
 }
 

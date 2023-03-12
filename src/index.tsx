@@ -10,7 +10,6 @@ import Game from './components/Main/Game';
 import Message from './components/Message/Message';
 import GlobalMessage from './components/Message/GlobalMessages/GlobalMessage';
 import ChatRoom from './components/Message/ChatRoom/ChatRoom';
-import FriendsList from './components/Message/FriendsList/FriendsList';
 import CardsGame from './components/Main/CardsGame/CardsGame';
 
 const root = ReactDOM.createRoot(
