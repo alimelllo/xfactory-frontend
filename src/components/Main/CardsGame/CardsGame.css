@@ -7,7 +7,6 @@
 }
 
 .card {
-    
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -40,6 +39,18 @@
 .card__face--back {
   background: linear-gradient(145deg, rgba(135, 5, 70, 0.935) 0%, rgba(153, 18, 18, 0.992)100%);
   transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 767px) { 
+  .scene {
+    width: 15%;
+    margin: 1rem;
+  }
+  .card__face {
+    padding: 10px;
+    height: 4.5rem;
+    padding-top: 20px;
+  }
 }
 
 .animate1{
@@ -80,9 +91,11 @@
   from {
     opacity: 0.5;
     rotate: 980deg;
+    transform: translateX(-5rem);
   }
   to {
     opacity: 1;
     rotate: 0deg;
+    transform: translateX(0rem);
   }
 }
