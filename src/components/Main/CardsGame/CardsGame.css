@@ -4,11 +4,12 @@
   width: 7%;
   margin: 1rem;
   perspective: 600px;
+  cursor: pointer;
 }
 
 .card {
   position: relative;
-  cursor: pointer;
+ 
   transform-style: preserve-3d;
   transition: all 0.5s ease-out;
 }
@@ -18,6 +19,7 @@
 }
 
 .card__face {
+  
   height: 8rem;
   border-radius: 10px;
   width: 100%;
@@ -27,7 +29,7 @@
   font-weight: bold;
   backface-visibility: hidden;
   padding: 20px;
-  padding-top: 30px;
+  padding-top: 35px;
 }
 
 .card__face--front {
@@ -90,12 +92,38 @@
 @keyframes animateCard {
   from {
     opacity: 0.5;
-    rotate: 980deg;
+    rotate: 1880deg;
     transform: translateX(-5rem);
   }
   to {
     opacity: 1;
     rotate: 0deg;
-    transform: translateX(0rem);
+    transform: translateX(0); 
   }
+}
+
+.leave{
+  animation: leave 1s ease-out forwards;
+  transition: all 0.4s ease out;
+}
+
+@keyframes leave {
+  from {
+    opacity: 1;
+    rotate:0deg;
+    transform: translateY(0rem);
+    
+  }
+  to {
+    opacity: 0;
+    rotate: 1460deg;
+    transform: translateY(5rem);
+    display: none;
+    cursor: default;
+  }
+}
+
+.stay{
+  animation: leave 1s ease-out forwards;
+  transition: all 0.4s ease out;
 }

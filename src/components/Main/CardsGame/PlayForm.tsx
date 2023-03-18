@@ -1,7 +1,12 @@
 import payment from '../../../images/payment.webp'
+import { useDispatch } from 'react-redux';
+import {canPlay} from '../../../Redux/Reducers/CardsGame/CardsGame';
+
 
 const PlayForm = () => {
-    
+
+const SetCanPlay = useDispatch();
+
     return (
         <div className="flex flex-row md:flex-col justify-around md:justify-center text-[#c7c7c7] h-screen">
             
@@ -33,7 +38,7 @@ const PlayForm = () => {
                 <div className='w-[70%] text-center text-[2rem] md:text-[1.5rem]'>
                    <input className='w-[70%] py-5 mx-auto pb-6 rounded-[10px] bg-[#0e0e0e] boxshadow2 pl-[2rem] md:pl-[1rem] outline-none placeholder:text-[#414141]' placeholder='Amount'></input>
                 </div> 
-                <div className='w-[30%] mx-auto '><p className=' w-[5rem] pt-5 text-[1.5rem] h-[5rem] rounded-[50%] boxshadow2  font-[600] bg-[#a93e01] hover:bg-[#9f2f0f] text-center ml-[3rem] md:ml-0 cursor-pointer hover:scale-105 transition-all duration-200 '>Play</p></div> 
+                <div className='w-[30%] mx-auto '><p onClick={() => SetCanPlay(canPlay(true))} className=' w-[5rem] pt-5 text-[1.5rem] h-[5rem] rounded-[50%] boxshadow2  font-[600] bg-[#a93e01] hover:bg-[#9f2f0f] text-center ml-[3rem] md:ml-0 cursor-pointer hover:scale-105 transition-all duration-200 '>Play</p></div> 
               </div>
 
             </div>

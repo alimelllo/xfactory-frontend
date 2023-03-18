@@ -11,12 +11,17 @@ import Message from './components/Message/Message';
 import GlobalMessage from './components/Message/GlobalMessages/GlobalMessage';
 import ChatRoom from './components/Message/ChatRoom/ChatRoom';
 import CardsGame from './components/Main/CardsGame/CardsGame';
+import store from './Redux/Store';
+import { Provider } from 'react-redux'
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <UserContextProvider>
+<Provider store={store}>
   <BrowserRouter>
    <Routes>
      <Route path="/" element={<App />}/>
@@ -32,6 +37,7 @@ root.render(
 
    </Routes>
   </BrowserRouter>
+  </Provider>
   </UserContextProvider>
 );
 
