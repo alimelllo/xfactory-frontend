@@ -22,8 +22,8 @@ const canPlayState = selectState.payload.CardsGame.canPlayValue;
 
 useEffect(() => {
    
-    let animates = [ 'animate1' , 'animate2' , 'animate3' , 'animate4' , 'animate5' ,'animate6' ,'animate7' ,'animate8' ,'animate9' ,'animate10' , 'animate10' , 'animate9' , 'animate8' , 'animate7' , 'animate6' , 'animate5', 'animate4' , 'animate3' , 'animate2' , 'animate1'];
-    let leaveAnimates = ['leave' ,'leave' ,'leave','','leave' ,'leave' ,'' ,'leave' ,'leave' ,'' , 'leave' , 'leave' , 'leave' , 'leave' , 'leave' , 'leave', 'leave' , 'leave' , 'leave' , 'leave'];
+    let animates = [ 'animate1' , 'animate2' , 'animate3' , 'animate4' , 'animate5' ,'animate6' ,'animate7' ,'animate8' ,'animate9' ,'animate10', 'animate1' , 'animate2' , 'animate3' , 'animate4' , 'animate5' ,'animate6' ,'animate7' ,'animate8' ,'animate9' ,'animate10' ];
+    let leaveAnimates = ['stay1' ,'leave' ,'leave','leave','leave' ,'leave' ,'stay2' ,'leave' ,'leave' ,'stay3' , 'leave' , 'leave' , 'leave' , 'leave' , 'leave' , 'leave', 'leave' , 'leave' , 'leave' , 'leave'];
 
     if(!checkStatus){
         const list = animates.map(( item : any) => (
