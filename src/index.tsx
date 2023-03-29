@@ -13,6 +13,7 @@ import ChatRoom from './components/Message/ChatRoom/ChatRoom';
 import CardsGame from './components/Main/CardsGame/CardsGame';
 import store from './Redux/Store';
 import { Provider } from 'react-redux'
+import Settings from './components/Settings/Settings';
 
 
 
@@ -34,6 +35,9 @@ root.render(
        <Route path="/Messages/Global" element={<GlobalMessage/>}/>
        <Route path="/Messages/Chat" element={<ChatRoom/>}/>
     </Route>
+
+    <Route path="/Settings" element={<Settings/>}/>
+
 
    </Routes>
   </BrowserRouter>
