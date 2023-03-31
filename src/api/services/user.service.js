@@ -21,6 +21,10 @@ class UserDataService {
   currentUserInfo(data) {
     return http.post("/currentUserInfo", data);
   }
+
+  addProfileImage(data){
+    return http.post("addProfileImage" , data);
+  }
 }
 
 export default new UserDataService();
