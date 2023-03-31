@@ -5,10 +5,36 @@ import Stars from '../GeneralComponents/StarsBackground/Stars';
 import rocketGame from '../../images/rocketGame.png';
 import cardsGame from '../../images/cardsGame.png';
 import luckGame from '../../images/luckGame.png';
-
-
+import userService from '../../api/services/user.service';
+import { useEffect, useState } from "react";
+import jwt_decode from "jwt-decode";
+import { profileImageHandler } from '../../Redux/Reducers/Settings/Profile/ProfileSettings';
+import { useDispatch, useSelector } from "react-redux";
 
 const Main = () : any => {
+
+
+  const selectState :any = useSelector(profileImageHandler);  
+  const SetProfileImage = useDispatch();
+
+
+
+  useEffect(() => {
+   
+    let token : any = localStorage.getItem('session');
+    let decoded : any = jwt_decode(token);
+   
+    userService.currentUserInfo({ id : decoded.id }).then(( resp ) => {
+     try{ 
+        SetProfileImage(profileImageHandler(resp.data.profileImage));
+     }
+     catch( err ){
+      console.log(err)
+     }
+        
+    })
+  } , [])
+
 
 return (
  <div className="w-full h-screen flex" style={{ backgroundImage : `url(${mainIntro})` , backgroundSize :'cover'  , backgroundPosition : 'center'}}>
