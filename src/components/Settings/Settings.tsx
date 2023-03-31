@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "../GeneralComponents/Header";
 import { profileImageHandler } from '../../Redux/Reducers/Settings/Profile/ProfileSettings';
 import { useDispatch, useSelector } from "react-redux";
+import userService from "../../api/services/user.service";
+import jwt_decode from "jwt-decode";
 
 
 const Settings = () => {
@@ -21,11 +23,33 @@ const getBase64 = ( file : any ) => {
 
       reader.onload = () => {
         resolve(baseURL);
-        let {result} = reader
+        let {result} : any = reader;
         SetProfileImage(profileImageHandler(result));
       };
     });
   };
+
+
+  const addProfileImage = async ( ) => {
+    
+    let token : any = localStorage.getItem('session');
+    let decoded : any = jwt_decode(token);
+    
+     
+    userService.addProfileImage({ userId : decoded.id , image : profileImageState }).then(( resp : any ) => {
+    try{
+      console.log(resp);
+    }
+    catch(err){
+       console.log(err);
+       
+    }
+  })
+}
+
+
+
+
 
 
   useEffect(() => {
@@ -52,13 +76,13 @@ const getBase64 = ( file : any ) => {
      Upload +
   </label>
 
-  <div className="bg-transparent p-1 border-[2px] border-solid border-[#353535] h-[10rem] w-[10rem] rounded-[50%] boxshadow3">
+  <div className="bg-transparent border-[2px] border-solid border-[#353535] h-[10rem] w-[10rem] rounded-[50%] boxshadow3">
     <img src={profileImageState} className='rounded-[50%]' />
   </div>
 
 </div>
 
-<button className="w-2/12 mx-auto mt-[5rem] bg-gradient-to-r from-[#3073a3] to-[#002980]  font-[600] text-[1.5rem] px-3 text-[white]   border-none rounded-[10px] boxshadow2 hover:scale-105 pb-2 duration-200 p-1 transition-all">Save</button>
+<button onClick={() => addProfileImage()} className="w-2/12 mx-auto mt-[5rem] bg-gradient-to-r from-[#3073a3] to-[#002980]  font-[600] text-[1.5rem] px-3 text-[white]   border-none rounded-[10px] boxshadow2 hover:scale-105 pb-2 duration-200 p-1 transition-all">Save</button>
 
      </div> }
 
