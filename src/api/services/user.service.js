@@ -22,8 +22,8 @@ class UserDataService {
     return http.post("/currentUserInfo", data);
   }
 
-  addProfileImage(data){
-    return http.post("addProfileImage" , data);
+  updateProfileChanges(data){
+    return http.post("updateProfileChanges" , data);
   }
 }
 

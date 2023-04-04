@@ -22,8 +22,7 @@ const [ showProfileSetting , SetShowProfileSetting ] = useState<boolean>(false);
         </div>
       </div> }
 
-     { showProfileSetting && 
-     <ProfileSettings/>}
+     { showProfileSetting &&  <ProfileSettings/> }
 
         </div>    
     )

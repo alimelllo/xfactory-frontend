@@ -14,6 +14,7 @@ import CardsGame from './components/Main/CardsGame/CardsGame';
 import store from './Redux/Store';
 import { Provider } from 'react-redux'
 import Settings from './components/Settings/Settings';
+import RouletteGame from './components/Main/RouletteGame/RouletteGame';
 
 
 
@@ -28,8 +29,11 @@ root.render(
      <Route path="/" element={<App />}/>
      <Route path="/CreateAccount" element={<CreateAccount/>}/>
      <Route path="/Login" element={<Login/>}/>
+     
      <Route path="/RocketGame" element={<Game/>}/>
      <Route path="/CardsGame" element={<CardsGame/>}/>
+     <Route path="/RouletteGame" element={<RouletteGame/>}/>
+
 
      <Route path="/Messages" element={<Message/>}>
        <Route path="/Messages/Global" element={<GlobalMessage/>}/>
