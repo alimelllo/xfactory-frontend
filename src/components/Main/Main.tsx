@@ -68,7 +68,7 @@ return (
        
         <div className="w-[80%] md:w-full mx-auto flex flex-row justify-around text-[#afafaf]">
           <div className='bg-[#1c1c1ce5] rounded-[15px] w-[30%] boxshadow3 z-50'>
-             <p className='text-center py-4 font-[600] text-[1.5rem] bg-[#191919] rounded-t-[15px] boxshadow3'>Lucky Roll Game</p>
+             <p className='text-center py-4 font-[600] text-[1.5rem] bg-[#191919] rounded-t-[15px] boxshadow3'> Roulette Game</p>
              <div className='w-7/12 my-[1rem] mx-auto boxshadow3 rounded-[50%]'><img className='opacity-[0.6]' src={roulette}/></div>
              <Link to="/RouletteGame"><p className='text-white pb-3 text-[1.5rem] text-center z-50 rounded-[5px] mx-auto boxshadow2 w-7/12 bg-gradient-to-r from-[#225436] to-[#3e6945] cursor-pointer transition-all duration-200 hover:scale-105 tracking-[1px] pt-2 my-[3rem]'> Start Playing </p></Link>
           </div>

@@ -23,7 +23,7 @@ const RouletteGame = () => {
     <Header/>
 
     <div className="w-full flex justify-center">
-      <div className="w-2/12 mt-5 flex justify-center">
+      <div className="w-[28.5rem] h-[28.5rem] rounded-[50%] boxshadow4 mt-[5rem]  flex justify-center border-[5px] border-[solid] border-[#5e5e5e]">
       <Wheel
           mustStartSpinning={true}
           spinDuration={0.8}
@@ -37,23 +37,7 @@ const RouletteGame = () => {
           textColors={["#f5f5f5"]}
           textDistance={55}
           fontSize={20}
-        //   backgroundColors={[
-        //     "#3f297e",
-        //     "#175fa9",
-        //     "#169ed8",
-        //     "#239b63",
-        //     "#64b031",
-        //     "#efe61f",
-        //     "#f7a416",
-        //     "#e6471d",
-        //     "#dc0936",
-        //     "#e5177b",
-        //     "#be1180",
-        //     "#871f7f"
-        //   ]}
-          onStopSpinning={() => {
-           
-          }}
+          onStopSpinning={() => { }}
         />
       </div>
     </div>
