@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const ProfileSettings = () => {
 
     const [ isLoading , SetIsLoading ] = useState<boolean>(false);
+    const [ isMounting , SetIsMounting ] = useState<boolean>(true);
 
 
     const selectState :any = useSelector(profileImageHandler);
@@ -29,7 +30,7 @@ const ProfileSettings = () => {
     const mobileState = selectNameState.payload.ProfileSettings.mobile;
     const SetMobile = useDispatch();
 
-console.log(nameState);
+
 
     const navigate = useNavigate();
 
@@ -48,7 +49,7 @@ console.log(nameState);
       };
     
     
-      const addProfileImage = async ( ) => {
+      const saveProfileImageChanges = async ( ) => {
         SetIsLoading(true);
         let token : any = localStorage.getItem('session');
         let decoded : any = jwt_decode(token);
@@ -57,6 +58,10 @@ console.log(nameState);
         try{
           console.log(resp);
           SetIsLoading(false);
+
+        localStorage.setItem('userName' , nameState );
+        localStorage.setItem('profileImage' , profileImageState);
+
           navigate('/');
         
         }
@@ -70,12 +75,38 @@ console.log(nameState);
       useEffect(() => {
       },[ profileImageState ])
     
-
+     
+      useEffect(() => {
+   
+        let token : any = localStorage.getItem('session');
+        let decoded : any = jwt_decode(token);
+       
+        userService.currentUserInfo({ id : decoded.id }).then(( resp ) => {
+          
+         try{ 
+          console.log(resp);
+            SetProfileImage(profileImageHandler(resp.data.profileImage));
+            SetName(nameHandler(resp.data.name));
+            SetEmail(emailHandler(resp.data.email));
+            SetMobile(mobileHandler(resp.data.mobile));
+    
+            SetIsMounting(false);
+         }
+         catch( err ){
+          SetIsMounting(false);
+          console.log(err)
+         }
+            
+        })
+      } , [])
 
 
 return (
 <>
-<div className="w-full flex flex-col text-[#cecece] text-[1.25rem]">
+
+{ isMounting && <ReactLoading type={"spinningBubbles"} width={'80px'} height={'80px'} color="#9a9a9a" className="mx-auto mt-[20rem]" /> }
+
+{ !isMounting && <div className="w-full flex flex-col text-[#cecece] text-[1.25rem]">
 
 <div className="w-6/12 mx-auto mt-[1rem] flex flex-row justify-between ">
   <label className=" bg-gradient-to-r from-[#30a362] to-[green]  font-[600] px-5 text-[white] h-[3rem] mt-[3rem] border-none rounded-[10px] boxshadow2 hover:scale-105 duration-200 pt-2 transition-all cursor-pointer">
@@ -106,8 +137,8 @@ return (
 
 
 { isLoading && <ReactLoading type={"spinningBubbles"} width={'50px'} height={'50px'} color="#9a9a9a" className="mx-auto mt-[2rem]" /> }
-{ !isLoading && <button onClick={() => addProfileImage()} className="w-2/12 mx-auto mt-[2rem] bg-gradient-to-r from-[#3073a3] to-[#002980]  font-[600] text-[1.5rem] px-3 text-[white]   border-none rounded-[10px] boxshadow2 hover:scale-105 pb-2 duration-200 p-1 transition-all">Save</button>}
-     </div> 
+{ !isLoading && <button onClick={() => saveProfileImageChanges()} className="w-2/12 mx-auto mt-[3rem] bg-gradient-to-r from-[#3073a3] to-[#002980]  font-[600] text-[1.5rem] px-3 text-[white]   border-none rounded-[10px] boxshadow2 hover:scale-105 pb-2 duration-200 p-1 transition-all">Save</button>}
+     </div> }
 </>
 )
 

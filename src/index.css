@@ -37,6 +37,11 @@ code {
     -20px -20px 26px #131313; 
 }
 
+.boxshadow4reversed{
+  box-shadow:  -20px -20px 26px #0d0d0d,
+    20px 20px 26px #131313; 
+}
+
 .blureEffectGreen{
   background: rgba( 102, 209, 107, 0.65 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );

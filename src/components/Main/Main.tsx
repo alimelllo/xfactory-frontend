@@ -44,6 +44,10 @@ const Main = () : any => {
         SetName(nameHandler(resp.data.name));
         SetEmail(emailHandler(resp.data.email));
         SetMobile(mobileHandler(resp.data.mobile));
+
+        localStorage.setItem('userName' , resp.data.name);
+        localStorage.setItem('profileImage' , resp.data.profileImage);
+
         SetIsLoading(false);
      }
      catch( err ){
@@ -58,7 +62,7 @@ const Main = () : any => {
 return (
  <div className="w-full h-screen flex" style={{ backgroundImage : `url(${mainIntro})` , backgroundSize :'cover'  , backgroundPosition : 'center'}}>
    
-  { isLoading && <ReactLoading type={"spinningBubbles"} width={'80px'} height={'80px'} color="#323232" className="m-auto" /> }
+  { isLoading && <ReactLoading type={"bars"} width={'100px'} height={'100px'} color="#323232" className="m-auto" /> }
   
   { !isLoading && <div className="w-full">
    <Stars />
