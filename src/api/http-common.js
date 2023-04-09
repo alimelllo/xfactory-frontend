@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://xfactory-backend.vercel.app",
+  baseURL: "https://xfactory-backend.vercel.app",
   headers: {
     "Content-type": "application/json",
     "Authorization": "Bearer secret",
